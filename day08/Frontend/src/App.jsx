@@ -6,7 +6,7 @@ const App = () => {
   const [notes, setNotes] = useState([])
 
   const fecthNotes = () => {
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://basic-server-qugq.onrender.com/api/notes")
       .then((res) => {
         setNotes(res.data.notes)
       })
@@ -25,7 +25,7 @@ const App = () => {
 
     console.log(title.value, description.value)
 
-    axios.post("http://localhost:3000/api/notes", {
+    axios.post("https://basic-server-qugq.onrender.com/api/notes", {
       title: title.value,
       description: description.value
     }).then(res => {
@@ -38,7 +38,7 @@ const App = () => {
 
 
   const handleDelete = (noteId) => {
-    axios.delete(`http://localhost:3000/api/notes/${noteId}`)
+    axios.delete(`https://basic-server-qugq.onrender.com/api/notes/${noteId}`)
       .then(res => {
         console.log("Note deleted")
         fecthNotes()
@@ -50,7 +50,7 @@ const App = () => {
 
   //   const { title, description } = e.target.elements
 
-  //   axios.patch(`http://localhost:3000/api/notes/${noteId}`, {
+  //   axios.patch(`https://basic-server-qugq.onrender.com/api/notes/${noteId}`, {
   //     title: title.value,
   //     description: description.value
   //   })
